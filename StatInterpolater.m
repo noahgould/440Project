@@ -6,7 +6,7 @@ function StatInterpolater(playerName)
 
     columnNames = {'FG Percentage', '3P Percentage', 'FT Percentage', 'Assists Per Game', 'Points Per Game'};
     columnNames = string(columnNames);
-    
+
     % Set year range for data
     years = 2008:2014;
     polyYears = years;
@@ -21,7 +21,6 @@ function StatInterpolater(playerName)
         % Calculate Lagrange polynomial for FG percentage
         fgPolynomial = Lagrange(polyYears, interpolateValues);
         piecewise = LinearInterpolation(polyYears, interpolateValues);
-
 
         % Get data points from Lagrange polynomial for FG percentage
         syms x
